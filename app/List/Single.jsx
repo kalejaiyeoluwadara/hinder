@@ -7,11 +7,18 @@ function Single({poster,hates,desc,img}) {
     <div className=" w-[300px] sm:w-[350px]  h-auto ">
       <div>
         <div className=" relative overflow-hidden h-[150px] rounded-[15px] ">
-          <Image
-            src={c1}
+          {/* <Image
+            src={
+              "https://images.unsplash.com/photo-1541089404510-5c9a779841fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }
             alt="Logo"
             className=" h-full z-20 w-full absolute object-cover  "
             layout="fixed"
+          /> */}
+          <img
+            className=" h-full z-20 w-full absolute scale-[1.2] object-cover  "
+            src={img}
+            alt=""
           />
           <div className="bg-white font-[500] text-black absolute bottom-3 right-3 h-auto py-1 text-[13px] w-auto px-3 rounded-[15px] z-40">
             <p>{hates} hates</p>

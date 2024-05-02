@@ -2,7 +2,9 @@ import Image from "next/image";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 import c1 from "../components/c1.jpg";
 import Link from "next/link";
+import { useGlobal } from "../components/context";
 export default function View() {
+  // const {state} = useGlobal()
   return (
     <main className="flex px-4 relative h-auto py-4 pb-20 w-screen flex-col">
       <section className="flex  top-0 w-screen z-50 bg-white h-[60px] items-center gap-2">
