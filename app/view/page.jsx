@@ -4,8 +4,8 @@ import c1 from "../components/c1.jpg";
 import Link from "next/link";
 export default function View() {
   return (
-    <main className="flex px-4 h-auto py-4 pb-20 w-screen flex-col">
-      <section className="flex items-center gap-2">
+    <main className="flex px-4 relative h-auto py-4 pb-20 w-screen flex-col">
+      <section className="flex  top-0 w-screen z-50 bg-white h-[60px] items-center gap-2">
         <Link href={'/'} >
           <div className="h-[50px] relative w-[50px] rounded-[50%] bg-gray-100 flex items-center justify-center  mr-1 ">
             <MdChevronLeft size={30} />
