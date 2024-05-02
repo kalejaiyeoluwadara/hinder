@@ -2,9 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 import c1 from '../components/c1.jpg'
 import { MdChevronRight } from "react-icons/md";
-function Single() {
+function Single({poster,hates,desc,img}) {
   return (
-    <div className=" w-full h-[250px] ">
+    <div className=" w-[300px] sm:w-[350px]  h-auto ">
       <div>
         <div className=" relative overflow-hidden h-[150px] rounded-[15px] ">
           <Image
@@ -14,7 +14,7 @@ function Single() {
             layout="fixed"
           />
           <div className="bg-white font-[500] text-black absolute bottom-3 right-3 h-auto py-1 text-[13px] w-auto px-3 rounded-[15px] z-40">
-            <p>20 hates</p>
+            <p>{hates} hates</p>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@ function Single() {
                 className="rounded-[50%] h-[40px] w-[40px] object-cover  "
                 layout="fixed"
               />
-              <p className="font-[700]">@singlebae</p>
+              <p className="font-[700]">@{poster}</p>
             </div>
             <div className="flex items-center text-red-700">
               <p className=" font-[600] text-[17px]  ">View post</p>
@@ -38,7 +38,7 @@ function Single() {
           </section>
         </div>
         <div>
-          <p>Have you guys seen this annoying couple? always post...</p>
+          <p>{desc}</p>
         </div>
       </div>
     </div>
@@ -46,3 +46,4 @@ function Single() {
 }
 
 export default Single
+// Have you guys seen this annoying couple? always post...
