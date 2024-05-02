@@ -1,13 +1,16 @@
 import Image from "next/image";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 import c1 from "../components/c1.jpg";
+import Link from "next/link";
 export default function View() {
   return (
-    <main className="flex px-4 py-4 flex-col">
+    <main className="flex px-4 h-auto py-4 pb-20 w-screen flex-col">
       <section className="flex items-center gap-2">
-        <div className="h-[50px] relative w-[50px] rounded-[50%] bg-gray-100 flex items-center justify-center  mr-1 ">
-          <MdChevronLeft size={30} />
-        </div>
+        <Link href={'/'} >
+          <div className="h-[50px] relative w-[50px] rounded-[50%] bg-gray-100 flex items-center justify-center  mr-1 ">
+            <MdChevronLeft size={30} />
+          </div>
+        </Link>
         <p className="font-[500] text-[18px]">Annoying Couple</p>
       </section>
 
@@ -51,23 +54,36 @@ export default function View() {
           </button>
         </div>
         {/* comment items */}
-        <div className="flex items-center mt-2 justify-between" >
-          <div className="flex items-center gap-1">
-            <Image
-              src={c1}
-              alt="Logo"
-              className="rounded-[50%] h-[40px] w-[40px] object-cover  "
-              layout="fixed"
-            />
-            <p className="ml-2 opacity-60 font-[500] text-[14px] ">@single2</p>
-          </div>
-          <button
-            className="px-4 py-2 bg-gray-100 text-[16px] font-[600]
+        <div>
+          <div className="flex items-center mt-2 justify-between">
+            <div className="flex items-center gap-1">
+              <Image
+                src={c1}
+                alt="Logo"
+                className="rounded-[50%] h-[40px] w-[40px] object-cover  "
+                layout="fixed"
+              />
+              <p className="ml-2 opacity-60 font-[500] text-[14px] ">
+                @single2
+              </p>
+            </div>
+            <button
+              className="px-4 py-2 bg-gray-100 text-[16px] font-[600]
             rounded-[20px] "
-          >
-            Reply
-          </button>
+            >
+              Reply
+            </button>
+          </div>
+          <p className="font-[500] mt-2 text-[16px] ">
+            ikr! very exhausting couple. I'm in oo
+          </p>
         </div>
+      </section>
+
+      <section className="flex w-full mt-8  items-center justify-center ">
+        <button className="bg-red-800 text-white font-[500] text-opacity-90 text-[20px] py-3 w-full flex items-center border-none justify-center rounded-[30px] ">
+          Hate on their relationship
+        </button>
       </section>
     </main>
   );
