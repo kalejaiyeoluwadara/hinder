@@ -13,7 +13,7 @@ function Single() {
             className=" h-full z-20 w-full absolute object-cover  "
             layout="fixed"
           />
-          <div className="bg-white font-[600] text-black absolute bottom-3 right-3 h-auto py-1 w-auto px-3 rounded-[15px] z-40">
+          <div className="bg-white font-[500] text-black absolute bottom-3 right-3 h-auto py-1 text-[13px] w-auto px-3 rounded-[15px] z-40">
             <p>20 hates</p>
           </div>
         </div>
