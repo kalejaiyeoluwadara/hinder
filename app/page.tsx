@@ -58,7 +58,11 @@ export default function Home() {
       )}
 
       {activeTab === "profile" && (
-        <ProfileView user={currentUser} />
+        <ProfileView
+          user={currentUser}
+          onBack={() => setActiveTab("feed")}
+          onCreatePost={() => setIsCreateOpen(true)}
+        />
       )}
 
       {/* Floating Bottom Nav */}

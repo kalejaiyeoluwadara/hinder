@@ -4,19 +4,21 @@ interface AvatarProps {
   initials: string;
   color: string;
   imageUrl?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
 }
 
 const sizeMap = {
   sm: "w-8 h-8 text-xs",
   md: "w-10 h-10 text-sm",
   lg: "w-12 h-12 text-base",
+  xl: "w-20 h-20 text-xl",
 };
 
 const pixelSizeMap = {
   sm: 32,
   md: 40,
   lg: 48,
+  xl: 80,
 };
 
 export default function Avatar({
