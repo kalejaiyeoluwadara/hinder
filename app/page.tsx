@@ -6,11 +6,15 @@ import CreatePostButton from "@/components/CreatePostButton";
 import FeedCard from "@/components/FeedCard";
 import FeedCardSkeleton from "@/components/FeedCardSkeleton";
 import BottomSheet from "@/components/BottomSheet";
+import BottomNav, { TabId } from "@/components/BottomNav";
+import LeaderboardView from "@/components/LeaderboardView";
+import ProfileView from "@/components/ProfileView";
 import { posts, currentUser } from "@/lib/mock-data";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<TabId>("feed");
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1200);
@@ -19,28 +23,43 @@ export default function Home() {
 
   return (
     <div className="min-h-dvh pb-8">
-      <Header
-        username={currentUser.username}
-        initials={currentUser.initials}
-        avatarColor={currentUser.avatarColor}
-        avatarUrl={currentUser.avatarUrl}
-      />
+      {activeTab === "feed" && (
+        <>
+          <Header
+            username={currentUser.username}
+            initials={currentUser.initials}
+            avatarColor={currentUser.avatarColor}
+            avatarUrl={currentUser.avatarUrl}
+          />
 
-      {/* Create post button */}
-      <div className="px-5 mt-3 mb-5">
-        <CreatePostButton onClick={() => setIsCreateOpen(true)} />
-      </div>
+          {/* Create post button */}
+          <div className="px-5 mt-3 mb-5">
+            <CreatePostButton onClick={() => setIsCreateOpen(true)} />
+          </div>
 
-      {/* Feed */}
-      <div className="space-y-6">
-        {isLoading
-          ? Array.from({ length: 3 }).map((_, i) => (
-              <FeedCardSkeleton key={i} />
-            ))
-          : posts.map((post, i) => (
-              <FeedCard key={post.id} post={post} index={i} />
-            ))}
-      </div>
+          {/* Feed */}
+          <div className="space-y-6 pb-24">
+            {isLoading
+              ? Array.from({ length: 3 }).map((_, i) => (
+                  <FeedCardSkeleton key={i} />
+                ))
+              : posts.map((post, i) => (
+                  <FeedCard key={post.id} post={post} index={i} />
+                ))}
+          </div>
+        </>
+      )}
+
+      {activeTab === "leaderboard" && (
+        <LeaderboardView posts={posts} />
+      )}
+
+      {activeTab === "profile" && (
+        <ProfileView user={currentUser} />
+      )}
+
+      {/* Floating Bottom Nav */}
+      <BottomNav activeTab={activeTab} onChange={setActiveTab} />
 
       {/* Create Post Bottom Sheet */}
       <BottomSheet
@@ -80,6 +99,7 @@ export default function Home() {
           <button
             id="submit-post-button"
             className="w-full py-3 rounded-full bg-[#8B0000] text-white font-semibold text-sm hover:bg-[#6B0000] transition-colors active:scale-[0.98]"
+            onClick={() => setIsCreateOpen(false)}
           >
             Post to Hinder 🔥
           </button>
