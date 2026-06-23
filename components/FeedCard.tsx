@@ -44,6 +44,7 @@ export default function FeedCard({ post, index }: FeedCardProps) {
           <Avatar
             initials={post.user.initials}
             color={post.user.avatarColor}
+            imageUrl={post.user.avatarUrl}
             size="sm"
           />
           <span className="text-sm font-medium text-zinc-900">

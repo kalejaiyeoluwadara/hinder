@@ -81,6 +81,7 @@ export default function PostPage({
             <Avatar
               initials={post.user.initials}
               color={post.user.avatarColor}
+              imageUrl={post.user.avatarUrl}
               size="sm"
             />
             <span className="text-sm font-medium text-zinc-900">
@@ -136,7 +137,7 @@ export default function PostPage({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.45, duration: 0.4 }}
       >
-        <HateButton initialCount={post.hateCount} />
+        <HateButton />
       </motion.div>
 
       {/* Add Comment Bottom Sheet */}

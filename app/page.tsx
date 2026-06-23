@@ -23,6 +23,7 @@ export default function Home() {
         username={currentUser.username}
         initials={currentUser.initials}
         avatarColor={currentUser.avatarColor}
+        avatarUrl={currentUser.avatarUrl}
       />
 
       {/* Create post button */}

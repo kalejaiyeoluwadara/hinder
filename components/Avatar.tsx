@@ -1,6 +1,9 @@
+import Image from "next/image";
+
 interface AvatarProps {
   initials: string;
   color: string;
+  imageUrl?: string;
   size?: "sm" | "md" | "lg";
 }
 
@@ -10,11 +13,33 @@ const sizeMap = {
   lg: "w-12 h-12 text-base",
 };
 
+const pixelSizeMap = {
+  sm: 32,
+  md: 40,
+  lg: 48,
+};
+
 export default function Avatar({
   initials,
   color,
+  imageUrl,
   size = "md",
 }: AvatarProps) {
+  if (imageUrl) {
+    const pixels = pixelSizeMap[size];
+    return (
+      <div className={`${sizeMap[size]} rounded-full overflow-hidden shrink-0 relative bg-zinc-200`}>
+        <Image
+          src={imageUrl}
+          alt={initials}
+          width={pixels}
+          height={pixels}
+          className="w-full h-full object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className={`${sizeMap[size]} rounded-full flex items-center justify-center font-semibold text-white shrink-0`}

@@ -4,11 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface HateButtonProps {
-  initialCount?: number;
   onHate?: () => void;
 }
 
-export default function HateButton({ initialCount, onHate }: HateButtonProps) {
+export default function HateButton({ onHate }: HateButtonProps) {
   const [hated, setHated] = useState(false);
 
   const handleHate = () => {

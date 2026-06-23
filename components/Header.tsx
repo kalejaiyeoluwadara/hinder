@@ -7,12 +7,14 @@ interface HeaderProps {
   username: string;
   initials: string;
   avatarColor: string;
+  avatarUrl?: string;
 }
 
 export default function Header({
   username,
   initials,
   avatarColor,
+  avatarUrl,
 }: HeaderProps) {
   return (
     <motion.header
@@ -22,7 +24,7 @@ export default function Header({
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className="flex items-center gap-3">
-        <Avatar initials={initials} color={avatarColor} size="md" />
+        <Avatar initials={initials} color={avatarColor} imageUrl={avatarUrl} size="md" />
         <h1 className="text-base font-semibold text-zinc-900">
           Welcome back, {username}
         </h1>

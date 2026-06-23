@@ -20,6 +20,7 @@ export default function Comment({ comment, index }: CommentProps) {
       <Avatar
         initials={comment.user.initials}
         color={comment.user.avatarColor}
+        imageUrl={comment.user.avatarUrl}
         size="sm"
       />
       <div className="flex-1 min-w-0">
