@@ -3,6 +3,7 @@ export interface User {
   username: string;
   avatarColor: string;
   initials: string;
+  avatarUrl?: string;
 }
 
 export interface Comment {

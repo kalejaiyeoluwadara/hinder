@@ -5,6 +5,7 @@ export const currentUser: User = {
   username: "single quin",
   avatarColor: "#6B21A8",
   initials: "SQ",
+  avatarUrl: "/images/avatars/quin.png",
 };
 
 const singlebae: User = {
@@ -12,6 +13,7 @@ const singlebae: User = {
   username: "singlebae",
   avatarColor: "#0D9488",
   initials: "SB",
+  avatarUrl: "/images/avatars/bae.png",
 };
 
 const pringlesingle: User = {
@@ -19,6 +21,7 @@ const pringlesingle: User = {
   username: "pringlesingle",
   avatarColor: "#7C3AED",
   initials: "PS",
+  avatarUrl: "/images/avatars/pringle.png",
 };
 
 const lonelyqueen: User = {
@@ -26,6 +29,7 @@ const lonelyqueen: User = {
   username: "lonelyqueen",
   avatarColor: "#DB2777",
   initials: "LQ",
+  avatarUrl: "/images/avatars/lonely.png",
 };
 
 const singlet2: User = {
@@ -33,6 +37,7 @@ const singlet2: User = {
   username: "singlet2",
   avatarColor: "#EA580C",
   initials: "S2",
+  avatarUrl: "/images/avatars/singlet.png",
 };
 
 const solosavage: User = {
@@ -40,6 +45,7 @@ const solosavage: User = {
   username: "solosavage",
   avatarColor: "#2563EB",
   initials: "SS",
+  avatarUrl: "/images/avatars/savage.png",
 };
 
 export const posts: Post[] = [
