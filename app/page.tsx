@@ -9,11 +9,13 @@ import BottomSheet from "@/components/BottomSheet";
 import BottomNav, { TabId } from "@/components/BottomNav";
 import LeaderboardView from "@/components/LeaderboardView";
 import ProfileView from "@/components/ProfileView";
+import NotificationDrawer from "@/components/NotificationDrawer";
 import { posts, currentUser } from "@/lib/mock-data";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<TabId>("feed");
 
   useEffect(() => {
@@ -30,6 +32,7 @@ export default function Home() {
             initials={currentUser.initials}
             avatarColor={currentUser.avatarColor}
             avatarUrl={currentUser.avatarUrl}
+            onNotificationsClick={() => setIsNotificationsOpen(true)}
           />
 
           {/* Create post button */}
@@ -60,6 +63,12 @@ export default function Home() {
 
       {/* Floating Bottom Nav */}
       <BottomNav activeTab={activeTab} onChange={setActiveTab} />
+
+      {/* Notification Drawer */}
+      <NotificationDrawer
+        isOpen={isNotificationsOpen}
+        onClose={() => setIsNotificationsOpen(false)}
+      />
 
       {/* Create Post Bottom Sheet */}
       <BottomSheet
